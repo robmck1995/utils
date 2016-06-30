@@ -2,8 +2,6 @@ import argparse
 import datetime
 import time
 
-pay = 27.5
-
 parser = argparse.ArgumentParser()
 parser.add_argument("pay_rate", type=float)
 parser.add_argument("in_hour", type = int)
@@ -19,5 +17,5 @@ while(1):
     over_hours = 4 if over_hours > 4 else over_hours
     double_hours = time_worked - 12 if time_worked > 12 else 0
     pay_hours = reg_hours + 1.5*over_hours + 2*double_hours
-    print "Hours: " + "{0:.3f}".format(reg_hours+over_hours+double_hours) + ", Comp: $" + "{0:.2f}".format(pay_hours*pay)
+    print "Hours: " + "{0:.3f}".format(reg_hours+over_hours+double_hours) + ", Comp: $" + "{0:.2f}".format(pay_hours*args.pay_rate)
     time.sleep(1)
